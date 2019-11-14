@@ -1,0 +1,35 @@
+[
+    {
+        "button": "button1",
+        "count": 1,
+        "modifiers": ["ctrl"],
+        "press_command": "drag_select",
+        "command": "goto_definition"
+    },
+
+
+    // move regular ctrl-click to ctrl-secondaryclick
+    {
+        "button": "button2", "count": 1, "modifiers": ["ctrl"],
+        "press_command": "drag_select_callback",
+        "press_args": {"additive": true}
+    },
+
+
+    // Mouse 3 column select
+    {
+        "button": "button3",
+        "press_command": "drag_select",
+        "press_args": {"by": "columns"}
+    },
+    {
+        "button": "button3", "modifiers": ["ctrl"],
+        "press_command": "drag_select",
+        "press_args": {"by": "columns", "additive": true}
+    },
+    {
+        "button": "button3", "modifiers": ["alt"],
+        "press_command": "drag_select",
+        "press_args": {"by": "columns", "subtractive": true}
+    }
+]

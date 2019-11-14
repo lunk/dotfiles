@@ -1,0 +1,25 @@
+[
+    {
+        "keys": [
+            "ctrl+alt+a"
+        ],
+        "command": "pretty_json",
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "source.json" }
+        ]
+    },
+    {
+        "keys": ["ctrl+alt+shift+a"],
+        "command": "jq_pretty_json",
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "source.json" }
+        ]
+    },
+    {
+        "keys": ["ctrl+r"],
+        "command": "pretty_json_goto_symbol",
+        "context": [
+            { "key": "selector", "operator": "equal", "operand": "source.json" }
+        ]
+    }
+]

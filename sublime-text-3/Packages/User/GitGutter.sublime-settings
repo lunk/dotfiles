@@ -1,0 +1,9 @@
+// GitGutter Settings - User
+{
+    "compare_against": "master",
+    "show_line_annotation": "auto",
+    "line_annotation_ruler": 1,
+    "debounce_delay": 500,
+    "line_annotation_text": "{{line_author}} ({{line_author_age}}, {{line_author_time}}) · {{line_summary}}",
+
+}

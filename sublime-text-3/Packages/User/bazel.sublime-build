@@ -1,0 +1,20 @@
+{
+    //"shell_cmd": "bazel build //... --config=linux --copt=\"-fdiagnostics-color=always\"",
+    // "shell_cmd": "bazel build //... --config=linux --config=dbg --copt=\"-fdiagnostics-color=always\"",
+    // "syntax": "C++",
+    // "target": "bazel-pantheon",
+    // "cancel": "bazel-pantheon",
+    // "kill": true,
+    // "selector": "source.C++",
+    // "keyfiles": ["BUILD"],
+    // "syntax": " Packages/C++/C++.sublime-syntax",
+    // "syntax": "Packages/ANSIescape/ANSI.tmLanguage",
+    "windows": {
+            "shell_cmd": "bazel build //... --config=windows"
+    },
+    "linux": {
+            // "shell_cmd": "bazel build //... --config=linux --copt=\"-fdiagnostics-color=always\"",
+             "shell_cmd": "bazel build //... --config=linux --config=dbg --copt=-fdiagnostics-color=always"
+
+    }
+}

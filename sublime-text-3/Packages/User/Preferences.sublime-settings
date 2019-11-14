@@ -1,0 +1,38 @@
+{
+	"always_show_minimap_viewport": false,
+	"bold_folder_labels": true,
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+	"enable_tab_scrolling": false,
+	"ensure_newline_at_eof_on_save": true,
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"bazel*"
+	],
+	"font_size": 9,
+	"git_diff_target": "master",
+	"highlight_line": true,
+	"highlight_modified_tabs": true,
+	"ignored_packages":
+	[
+		"Anaconda",
+		"EasyClangComplete",
+		"SublimeGDB",
+		"Vintage"
+	],
+	"indent_to_bracket": false,
+	"mini_diff": false,
+	"rulers":
+	[
+		120
+	],
+	"shift_tab_unindent": true,
+	"show_tab_close_buttons": false,
+	"tab_size": 4,
+	"theme": "Default.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}

@@ -1,0 +1,52 @@
+[
+	{ "keys": ["ctrl+7"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+alt+7"], "command": "toggle_comment", "args": { "block": true } },
+	{ "keys": ["ctrl+shift+7"], "command": "toggle_comment", "args": { "block": true } },
+	{ "keys": ["ctrl+y"], "command": "redo" },
+	{ "keys": ["ctrl+shift+y"], "command": "redo_or_repeat" },
+    { "keys": ["ctrl+m"], "command": "move_to", "args": {"to": "brackets"} },
+	{ "keys": ["ctrl+shift+v"], "command": "paste" },
+    { "keys": ["ctrl+v"], "command": "paste_and_indent" },
+    { "keys": ["ctrl+up"], "command": "move", "args": {"by": "lines", "forward": false} },
+    { "keys": ["ctrl+down"], "command": "move", "args": {"by": "lines", "forward": true} },
+    { "keys": ["alt+up"], "command": "move", "args": {"by": "lines", "forward": false} },
+    { "keys": ["alt+down"], "command": "move", "args": {"by": "lines", "forward": true} },
+
+    // alt pil. byt focus group
+    { "keys": ["alt+left"], "command": "focus_neighboring_group", "args": {"forward": false} },
+    { "keys": ["alt+right"], "command": "focus_neighboring_group", "args": {"forward": true} },
+
+    // split view
+    /*
+
+
+
+    */
+
+    { "keys": ["alt+-"], "command": "jump_back" },
+    { "keys": ["alt+shift+-"], "command": "jump_forward" },
+    { "keys": ["shift+f12"], "command": "goto_reference" },
+    { "keys": ["ctrl+shift+r"], "command": "goto_symbol_in_project" },
+
+    { "keys": ["ctrl+shift+f"], "command": "slurp_find_string" },
+
+
+    /*
+    Vore najs att ha ctrl+n vara find_next om find-menyn är uppe
+    { "keys": ["f3"], "command": "find_next" },
+    { "keys": ["ctrl+enter"], "command": "run_macro_file", "args": {"file": "res://Packages/User/Add Line Semicolon.sublime-macro"}, "context":
+        [
+            { "key": "following_text", "operator": "not_regex_contains", "operand": ";$", "match_all": false },
+            { "key": "selector", "operator": "equal", "operand": "(source.css, source.scss) - comment", "match_all": false },
+
+        ]
+    },
+
+    */
+    { "keys": ["ctrl+shift+."], "command": "fold" },
+    { "keys": ["ctrl+shift+,"], "command": "unfold" },
+
+    { "keys": ["ctrl+alt+h"], "command": "git_gutter_compare_head" },
+    { "keys": ["ctrl+alt+c"], "command": "git_gutter_compare_commit" },
+
+]

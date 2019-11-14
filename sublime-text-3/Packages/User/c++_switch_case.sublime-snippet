@@ -1,0 +1,13 @@
+<snippet>
+    <description>switch case</description>
+    <content><![CDATA[
+switch(${1:/* condition */}) {
+    case 1 : std::cout << '1' << std::endl;
+             break;
+    case 2 : std::cout << '2' << std::endl;
+             break;
+}
+]]></content>
+    <tabTrigger>switch</tabTrigger>
+    <scope>source.c, source.c++</scope>
+</snippet>
