@@ -1,0 +1,17 @@
+[pull]
+[push]
+    default = simple
+#[diff]
+#   external = meld
+[diff]
+    tool = meld
+[difftool]
+    prompt = false
+[difftool "meld"]
+    cmd = meld "$LOCAL" "$REMOTE"
+[core]
+    autocrlf = input
+[pull]
+    ff = only
+[alias]
+    tree = log --graph --decorate --all --oneline

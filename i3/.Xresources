@@ -62,6 +62,14 @@ XTerm.vt100.metaSendsEscape: true
 XTerm.vt100.saveLines: 16284
 XTerm.vt100.reverseVideo: false
 XTerm.vt100.bellIsUrgent: true
+XTerm*rightScrollBar: true
+! XTerm*ScrollBar: true
+! XTerm*ScrollBar.width: 1
+XTerm.vt100.scrollBar: true
+XTerm.vt100.scrollbar.width: 4
+XTerm*scrollTtyOutput: false
+XTerm.vt100.alternateScroll: true
+
 
 xterm*VT100.Translations: #override \
                  Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
