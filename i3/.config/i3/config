@@ -15,7 +15,7 @@ set $mod Mod4
 exec --no-startup-id xsetroot -solid "#444444"
 
 # audio stuff
-exec --no-startup-id pulseaudio
+# exec --no-startup-id pulseaudio
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -43,7 +43,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+w kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -i
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -161,16 +161,62 @@ exec --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Disa
 # screen brightness, sound
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 9
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 2 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 2 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
+
+
+# #------------------------
+# ## Volume control
+
+# # Path to volume control, without trailing slash
+# set $volumepath ~/bin/i3-volume
+
+# # Command for the status line
+# #   ie: i3blocks, i3status
+# set $statuscmd i3blocks
+
+# # Signal used to update the status line
+# #   i3blocks uses SIGRTMIN+10 by default
+# #   i3status uses SIGUSR1 by default
+# set $statussig SIGRTMIN+10
+
+# # Amount to increase/decrease volume as a percentage
+# set $volumestep 5
+
+# # pulseaudio-utils settings
+# #
+# # Symbolic name for sink (numeric index not supported)
+# #   Recommended: comment out this setting and omit the -s option to use default sink
+# #   List sink names: pacmd list-sinks | awk -F "[<>]" '/^\s+name: <.*>/{print $2}'
+# set $sinkname alsa_output.pci-0000_00_1f.3.analog-stereo
+
+# # Using pulseaudio-utils (append "-s $sinkname" without quotes to override default sink)
+# bindsym XF86AudioRaiseVolume exec $volumepath -np -i $volumestep -t $statuscmd -u $statussig
+# bindsym XF86AudioLowerVolume exec $volumepath -np -d $volumestep -t $statuscmd -u $statussig
+# bindsym XF86AudioMute        exec $volumepath -mn -t $statuscmd -u $statussig
+
+
+# old
+set $sinkname alsa_output.pci-0000_00_1f.3.analog-stereo
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume $sinkname +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume $sinkname -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sinkname toggle
+# -----------------------
 
 # redshift
 # exec --no-startup-id redshift -l 59.62:18.52 -m randr -t 6500:3000 -b 0.6 -o
 
 # hide borders
-hide_edge_borders vertical
-new_window 1pixel
+# hide_edge_borders vertical
+hide_edge_borders smart
+# new_window 1pixel
+default_border pixel 3
+# class                 border  backgr. text    indicator child_border
+client.focused          #3c8d2f #285577 #ffffff #2e9ef4   #52c440
+client.focused_inactive #0b5200 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -203,7 +249,7 @@ bindsym $mod+r mode "resize"
 set $locker i3lock -c 3f3f3f -f -p win
 set $xrandr-laptop ~/.screenlayout/laptop.sh
 set $xrandr-work ~/.screenlayout/office-triple.sh
-set $xrandr-work2 ~/.screenlayout/office-triple-rakt.sh
+set $xrandr-work-flat ~/.screenlayout/office-rakt.sh
 # autolock
 exec ~/bin/xautolock_wrap
 
@@ -218,7 +264,7 @@ mode "$mode_system" {
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
     bindsym 1 exec --no-startup-id $xrandr-laptop, mode "default"
     bindsym 2 exec --no-startup-id $xrandr-work, mode "default"
-    bindsym 3 exec --no-startup-id $xrandr-work2, mode "default"
+    bindsym 3 exec --no-startup-id $xrandr-work-flat, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

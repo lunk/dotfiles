@@ -12,6 +12,11 @@
 [core]
     autocrlf = input
 [pull]
-    ff = only
+	ff = only
 [alias]
     tree = log --graph --decorate --all --oneline
+[user]
+	name = Oscar Lundqvist
+	email = oscar.lundqvist@xxxxxx.com
+[hub]
+	protocol = ssh

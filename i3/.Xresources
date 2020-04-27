@@ -67,7 +67,7 @@ XTerm*rightScrollBar: true
 ! XTerm*ScrollBar.width: 1
 XTerm.vt100.scrollBar: true
 XTerm.vt100.scrollbar.width: 4
-XTerm*scrollTtyOutput: false
+XTerm*scrollTtyOutput: true
 XTerm.vt100.alternateScroll: true
 
 

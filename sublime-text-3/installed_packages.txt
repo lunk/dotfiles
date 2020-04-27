@@ -2,12 +2,15 @@
 A File Icon.sublime-package
 ANSIescape.sublime-package
 ApplySyntax.sublime-package
+BracketHighlighter.sublime-package
 Clang Format.sublime-package
 CMake.sublime-package
+Compare Side-By-Side.sublime-package
 GitGutter.sublime-package
 Highlight Trailing Whitespace.sublime-package
 HTMLBeautify.sublime-package
 Package Control.sublime-package
 PackageResourceViewer.sublime-package
+Pretty JSON.sublime-package
 Protobuf Syntax Hightlighting.sublime-package
 SideBarEnhancements.sublime-package

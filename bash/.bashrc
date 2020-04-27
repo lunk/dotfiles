@@ -8,7 +8,7 @@ case $- in
       *) return;;
 esac
 
-
+set +x
 echo bashrc start
 
 # don't put duplicate lines or lines starting with space in the history.
@@ -29,9 +29,6 @@ shopt -s checkwinsize
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
 #shopt -s globstar
-
-# make less more friendly for non-text input files, see lesspipe(1)
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -120,9 +117,8 @@ if ! shopt -oq posix; then
 fi
 
 export WORKON_HOME=$HOME/.virtualenvs
-
-source /usr/local/bin/virtualenvwrapper.sh
-source /home/olut/.bazel/bin/bazel-complete.bash
+source ~/.local/bin/virtualenvwrapper.sh
+source ~/.bazel/bin/bazel-complete.bash
 
 if [ -f ~/.bash_sensible.bash ]; then
    source ~/.bash_sensible.bash
@@ -135,10 +131,17 @@ fi
 #powerline-daemon -q
 #POWERLINE_BASH_CONTINUATION=1
 #POWERLINE_BASH_SELECT=1
-#. /home/olut/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+#. ~/.local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 
 # dont quit terminal on ctrl+d
 set -o ignoreeof
 
-PATH="/home/olut/bin:$PATH"
+PATH="~/.local/bin:$PATH"
+PATH="~/bin:$PATH"
 PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# source ~/.config/broot/launcher/bash/br
+# xinput --set-prop "Microsoft Microsoft Pro Intellimouse Mouse" "Coordinate Transformation Matrix" 0.500000, 0.000000, 0.000000, 0.000000, 0.500000, 0.000000, 0.000000, 0.000000, 1.000000

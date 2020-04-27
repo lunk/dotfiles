@@ -1,5 +1,6 @@
 // GitGutter Settings - User
 {
+    // "compare_against": "HEAD",
     "compare_against": "master",
     "show_line_annotation": "auto",
     "line_annotation_ruler": 1,

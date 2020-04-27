@@ -1,0 +1,15 @@
+i3_crash.txt
+
+
+i3 often crash if you open gnome/unity stuff such as the control panel. Sometimes even when i open some image or zip i received in slack. The whole system shuts down.
+I wanted to change Nautilus file browser to Thunar but the same shit happened as soon as i started thunar.
+found it https://ubuntuforums.org/showthread.php?t=1613132
+
+Found something on somewhere (ubuntu forums i think) that said to add "nomodeset" to kernel boot options
+
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash nomodeset"
+sudo update-grub
+
+this seems to fix the crashes but breaks redshift which is super bad for my eyes :/
+Even the brightness buttons on the laptop stops working, but at least it doesn't crash
+And external monitors doesn't work either, xrandr borks

@@ -1,0 +1,38 @@
+Using an apple keyboard on ubuntu is a rabbithole of shit and confusion. To make life easy, just use the keyboard as a regular ibm type and just fix the most anoying stuff such as swapping alt and cmd, trying to get /|\ to work like on a mac is futile.
+
+useful commands:
+setxkbmap
+dpkg-reconfigure keyboard-configuration
+/sys/module/hid_apple/parameters/swap_opt_cmd
+
+
+/etc/modprobe.d/hid_apple.conf
+options hid_apple swap_opt_cmd=1
+options hid_apple iso_layout=0
+options hid_apple fnmode=0
+
+
+
+localectl list-x11-keymap-models
+localectl list-x11-keymap-variants
+localectl list-x11-keymap-layouts
+localectl list-x11-keymap-options
+
+there's probably something wrong here, this messed everything up so use with caution:
+localectl set-x11-keymap se macintosh mac
+
+
+olut@selt20548:~$ cat /etc/X11/xorg.conf.d/30-keyboard.conf
+Section "InputClass"
+    Identifier "keyboard"
+    MatchIsKeyboard "yes"
+    Option "XkbLayout" "se"
+EndSection
+
+
+xinput -list | grep -i apple
+xinput -list | grep -i keyboard
+
+https://wiki.archlinux.org/index.php/Apple_Keyboard
+https://wiki.archlinux.org/index.php/Xorg/Keyboard_configuration
+

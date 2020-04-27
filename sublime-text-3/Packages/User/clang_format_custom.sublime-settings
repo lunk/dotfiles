@@ -399,7 +399,7 @@
 //  "Standard": "Cpp03",
 
     // The number of columns used for tab stops.
-//  "TabWidth": 2,
+ "TabWidth": 4,
 
     // The way to use tab characters in the resulting file.
     // Possible "values":

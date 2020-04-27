@@ -1,5 +1,32 @@
 {
 	"always_show_minimap_viewport": false,
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"*.meta",
+		"*.asmdef",
+		"*.pgm",
+		"*.mat",
+		"*.prefab",
+		"*.aar",
+		"*.mp3",
+		"*.ogg",
+		"*.wav",
+		"*.svg",
+		"*.asset"
+	],
 	"bold_folder_labels": true,
 	"color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
 	"enable_tab_scrolling": false,
@@ -12,18 +39,26 @@
 		"CVS",
 		"bazel*"
 	],
-	"font_size": 9,
+	"font_size": 10,
 	"git_diff_target": "master",
 	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"ignored_packages":
 	[
+		"A File Icon",
 		"Anaconda",
+		"Compare Side-By-Side",
 		"EasyClangComplete",
 		"SublimeGDB",
 		"Vintage"
 	],
 	"indent_to_bracket": false,
+	"match_brackets": false,
+	"match_brackets_angle": false,
+	"match_brackets_braces": false,
+	"match_brackets_content": false,
+	"match_brackets_square": false,
+	"match_tags": false,
 	"mini_diff": false,
 	"rulers":
 	[
