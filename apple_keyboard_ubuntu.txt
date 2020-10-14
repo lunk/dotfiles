@@ -10,7 +10,7 @@ dpkg-reconfigure keyboard-configuration
 options hid_apple swap_opt_cmd=1
 options hid_apple iso_layout=0
 options hid_apple fnmode=0
-
+# regenerate initramfs, (fedora: sudo dracut --force)
 
 
 localectl list-x11-keymap-models
