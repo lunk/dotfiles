@@ -8,8 +8,8 @@ case $- in
       *) return;;
 esac
 
-set +x
-echo bashrc start
+# set +x
+# echo bashrc start
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -37,7 +37,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+    xterm-color|*-256color|alacritty) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -65,7 +65,7 @@ unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
-xterm*|rxvt*)
+xterm*|rxvt*|alacritty)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
@@ -118,7 +118,7 @@ fi
 
 export WORKON_HOME=$HOME/.virtualenvs
 source ~/.local/bin/virtualenvwrapper.sh
-source ~/.bazel/bin/bazel-complete.bash
+# source ~/.bazel/bin/bazel-complete.bash
 
 if [ -f ~/.bash_sensible.bash ]; then
    source ~/.bash_sensible.bash
@@ -138,6 +138,8 @@ set -o ignoreeof
 
 PATH="~/.local/bin:$PATH"
 PATH="~/bin:$PATH"
+PATH="~/.cargo/bin:$PATH"
+
 PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
 
 

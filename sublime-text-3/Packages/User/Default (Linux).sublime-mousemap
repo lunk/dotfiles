@@ -31,5 +31,20 @@
         "button": "button3", "modifiers": ["alt"],
         "press_command": "drag_select",
         "press_args": {"by": "columns", "subtractive": true}
-    }
+    },
+
+
+    {
+        "button": "scroll_up",
+        // "count": 1,
+        "modifiers": ["button1", "button2"],
+        "command": "scroll_width", "args": {"amount": -10, "by_character": true}
+    },
+    // { "keys": ["ctrl+alt+left"], "command": "scroll_width", "args": {"amount": -10, "by_character": true} },
+    {
+        "button": "scroll_down",
+        // "count": 1,
+        "modifiers": ["button1", "button2"],
+        "command": "scroll_width", "args": {"amount": 10, "by_character": true}
+    },
 ]

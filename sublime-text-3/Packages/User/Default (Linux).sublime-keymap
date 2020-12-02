@@ -48,5 +48,9 @@
 
     { "keys": ["ctrl+alt+h"], "command": "git_gutter_compare_head" },
     { "keys": ["ctrl+alt+c"], "command": "git_gutter_compare_commit" },
+    { "keys": ["ctrl+alt+left"], "command": "scroll_width", "args": {"amount": -10, "by_character": true} },
+    { "keys": ["ctrl+alt+right"], "command": "scroll_width", "args": {"amount": 10, "by_character": true} },
+    { "keys": ["ctrl+alt+up"], "command": "scroll_lines", "args": {"amount": 10 } },
+    { "keys": ["ctrl+alt+down"], "command": "scroll_lines", "args": {"amount": -10 } },
 
 ]

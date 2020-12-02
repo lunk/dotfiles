@@ -12,7 +12,7 @@ cp ~/.config/i3blocks/config ~/hax/dotfiles/i3/.config/i3blocks/
 cp ~/.config/i3/config ~/hax/dotfiles/i3/.config/i3/
 
 # sublime
-ls -1 './.config/sublime-text-3/Installed Packages'/ > ~/hax/dotfiles/sublime-text-3/installed_packages.txt
+ls -1 ~/.config/sublime-text-3/Installed\ Packages/ > ~/hax/dotfiles/sublime-text-3/installed_packages.txt
 cp ~/.config/sublime-text-3/Packages/User/ApplySyntax.sublime-settings ~/hax/dotfiles/sublime-text-3/Packages/User/
 cp ~/.config/sublime-text-3/Packages/User/bazel.sublime-build ~/hax/dotfiles/sublime-text-3/Packages/User/
 cp ~/.config/sublime-text-3/Packages/User/clang_format_custom.sublime-settings ~/hax/dotfiles/sublime-text-3/Packages/User/
