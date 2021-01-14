@@ -17,6 +17,6 @@
     tree = log --graph --decorate --all --oneline
 [user]
 	name = Oscar Lundqvist
-	email = oscar.lundqvist@xxxxxx.com
+	email = o@olq.se
 [hub]
 	protocol = ssh

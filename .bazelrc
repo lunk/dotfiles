@@ -1,2 +1,0 @@
-# build:linux --copt="-fdiagnostics-color=always"
-# build --incompatible_strict_action_env
