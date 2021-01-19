@@ -1,0 +1,92 @@
+{
+  "title": "Make circumflex, tilde and backtick work with one stroke on Spanish key layout.",
+  "rules": [
+    {
+      "description": "One stroke circumflex.",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "close_bracket",
+            "modifiers": {
+              "mandatory": ["shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "close_bracket",
+              "modifiers": ["shift"]
+            },
+            {
+              "key_code": "spacebar"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "One stroke tilde.",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "close_bracket",
+            "modifiers": {
+              "mandatory": ["option"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "close_bracket",
+              "modifiers": ["option"]
+            },
+            {
+              "key_code": "spacebar"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "No modifier tilde.",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "close_bracket"
+          },
+          "to": [
+            {
+              "key_code": "close_bracket",
+              "modifiers": ["option"]
+            },
+            {
+              "key_code": "spacebar"
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    },
+    {
+      "description": "PC style pipe",
+      "manipulators": [
+        {
+          "from": {
+            "key_code": "grave_accent_and_tilde",
+              "modifiers": {
+                "mandatory": ["right_gui"]
+              }
+          },
+          "to": [
+            {
+              "key_code": "7",
+
+              "modifiers": ["left_alt"]
+            }
+          ],
+          "type": "basic"
+        }
+      ]
+    }
+  ]
+}

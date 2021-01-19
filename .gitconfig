@@ -1,8 +1,8 @@
+
 [pull]
+    ff = only
 [push]
     default = simple
-#[diff]
-#   external = meld
 [diff]
     tool = meld
 [difftool]
@@ -11,8 +11,6 @@
     cmd = meld "$LOCAL" "$REMOTE"
 [core]
     autocrlf = input
-[pull]
-	ff = only
 [alias]
     tree = log --graph --decorate --all --oneline
 [user]
@@ -20,3 +18,19 @@
 	email = o@olq.se
 [hub]
 	protocol = ssh
+
+[color]
+        ui = always
+  diff = always
+  status = auto
+  branch = auto
+  interactive = auto
+  pager = true
+
+[color "status"]
+  added = green
+  changed = red bold
+  untracked = magenta bold
+
+[color "branch"]
+  remote = yellow
