@@ -11,5 +11,4 @@ alias untar='tar -xf'
 alias untar-bz2='tar -xjf'
 alias untar-gz='tar -xzf'
 # alias ls='ls -1 --color=auto'
-alias less="less -R"
-
+alias less="less -R --ignore-case --jump-target=4 --shift=.1"
