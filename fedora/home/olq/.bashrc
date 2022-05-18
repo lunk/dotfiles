@@ -148,7 +148,6 @@ PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig
 # source ~/.config/broot/launcher/bash/br
 # xinput --set-prop "Microsoft Microsoft Pro Intellimouse Mouse" "Coordinate Transformation Matrix" 0.500000, 0.000000, 0.000000, 0.000000, 0.500000, 0.000000, 0.000000, 0.000000, 1.000000
 
-
 # Less Colors for Man Pages
 export LESS_TERMCAP_mb=$'\E[0;103m' # begin blinking
 export LESS_TERMCAP_md=$'\E[0;93m' # begin bold
@@ -163,3 +162,8 @@ export LESS_TERMCAP_ZN=$(tput ssubm)
 export LESS_TERMCAP_ZV=$(tput rsubm)
 export LESS_TERMCAP_ZO=$(tput ssupm)
 export LESS_TERMCAP_ZW=$(tput rsupm)
+
+export RIPGREP_CONFIG_PATH=~/.config/rg/.ripgreprc
+if [ -f ~/.config/rg/rg.bash ]; then
+   source ~/.config/rg/rg.bash
+fi

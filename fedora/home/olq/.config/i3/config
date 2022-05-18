@@ -36,8 +36,9 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+Return exec alacritty
-bindsym $mod+Return exec xterm
+bindsym $mod+Return exec alacritty
+# bindsym $mod+Shift+Return exec xterm -e "cd $(xcwd) && bash"
+bindsym $mod+p exec pcmanfm "`xcwd`"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -124,6 +125,18 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+
+#bindsym F1 workspace $ws1
+#bindsym F2 workspace $ws2
+#bindsym F3 workspace $ws3
+#bindsym F4 workspace $ws4
+#bindsym F5 workspace $ws5
+#bindsym F6 workspace $ws6
+#bindsym F7 workspace $ws7
+#bindsym F8 workspace $ws8
+#bindsym F9 workspace $ws9
+#bindsym F10 workspace $ws10
+
 bindsym $mod+Tab workspace back_and_forth
 
 bindsym $mod+Shift+m exec i3-input -F 'rename workspace to "%s"' -P 'New name: '
@@ -205,12 +218,12 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute $sinkname toggle
 # redshift
 # exec --no-startup-id redshift -l 59.62:18.52 -m randr -t 6500:3000 -b 0.6 -o
 
-# ----- border settings and colors ------
 # hide borders
 # hide_edge_borders vertical
-hide_edge_borders smart
+# hide_edge_borders smart
+hide_edge_borders none
 # new_window 1pixel
-default_border pixel 3
+default_border pixel 4
 # class                 border  backgr. text    indicator child_border
 client.focused          #3c8d2f #285577 #ffffff #2e9ef4   #52c440
 client.focused_inactive #0b5200 #5f676a #ffffff #484e50   #5f676a
@@ -254,10 +267,11 @@ set $xrandr-dell27 ~/.screenlayout/dell27.sh
 set $xrandr-laptop ~/.screenlayout/laptop.sh
 set $xrandr-work ~/.screenlayout/office-triple.sh
 set $xrandr-work-flat ~/.screenlayout/office-rakt.sh
+set $xrandr-auto 'xrandr --auto'
 # autolock
 exec ~/bin/xautolock_wrap
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown, (1) xrandr-dell27, (2) xrandr-laptop, (3) xrandr-work, (4) xrandr-work-flat
+set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown, (0) xrandr-auto, (1) xrandr-dell27
 mode "$mode_system" {
     bindsym l exec --no-startup-id $locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
@@ -266,7 +280,8 @@ mode "$mode_system" {
     bindsym h exec --no-startup-id $locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
-    bindsym 1 exec --no-startup-id $xrandr-gigabyte_dell, mode "default"
+    bindsym 0 exec --no-startup-id $xrandr-auto, mode "default"
+    bindsym 1 exec --no-startup-id $xrandr-dell27, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -290,6 +305,7 @@ bindsym $mod+Delete mode "$mode_system"
 #    status_command i3status
 #}
 
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 bar {
     position top
     font pango: Icons 8
@@ -298,21 +314,23 @@ bar {
         statusline #DCDCCC
     }
     status_command i3status
-    #status_command i3blocks
+    status_command i3blocks
 }
 
 # assignments
-assign [class=Slack] 4
-assign [class=Firefox] 3
-assign [class=Sublime] 2
+# assign [class=Slack] 4
+# assign [class=Firefox] 3
+# assign [class=Sublime] 2
 
 # autostart
-exec --no-startup-id firefox
-exec --no-startup-id subl
-exec --no-startup-id slack
+exec --no-startup-id i3-msg 'workspace 3; exec firefox; workspace 1'
+exec --no-startup-id i3-msg 'workspace 2; exec subl; workspace 1'
 exec --no-startup-id nm-applet
 exec --no-startup-id pasystray
 exec --no-startup-id xinput --set-prop "Microsoft Microsoft Pro Intellimouse Mouse" "Coordinate Transformation Matrix" 0.300000, 0.000000, 0.000000, 0.000000, 0.300000, 0.000000, 0.000000, 0.000000, 1.000000
+# exec --no-startup-id imwheel -b 45
 
 # the famous super user password promt (when mounting disks for example)
 exec --no-startup-id /usr/libexec/polkit-gnome-authentication-agent-1 &
+#fast key repeat
+exec --no-startup-id xset r rate 350 30

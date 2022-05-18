@@ -1,15 +1,19 @@
+#! /bin/bash
 # sync home to repo
+cd ~/hax/dotfiles/
 
 # bash
-cp ~/.bashrc ~/hax/dotfiles/bash/
-cp ~/.bash_sensible.bash ~/hax/dotfiles/bash/
-cp ~/.bash_aliases ~/hax/dotfiles/bash/
+cp --parents ~/.bashrc fedora/
+cp --parents ~/.bash_sensible.bash fedora/
+cp --parents ~/.bash_aliases fedora/
+cp --parents ~/.config/alacritty/alacritty.yml fedora/
 
 # i3
-cp ~/.Xresources ~/hax/dotfiles/i3/
-cp ~/.config/i3status/config ~/hax/dotfiles/i3/.config/i3status/
-cp ~/.config/i3blocks/config ~/hax/dotfiles/i3/.config/i3blocks/
-cp ~/.config/i3/config ~/hax/dotfiles/i3/.config/i3/
+cp --parents ~/.Xresources fedora/
+cp --parents ~/.config/i3*/config fedora/
+cp --parents ~/.config/i3/config fedora/
+
+exit 0
 
 # sublime
 ls -1 ~/.config/sublime-text-3/Installed\ Packages/ > ~/hax/dotfiles/sublime-text-3/installed_packages.txt
