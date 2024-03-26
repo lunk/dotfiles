@@ -1,0 +1,5 @@
+#autofstest     -rf,soft,intr,rsize=8192,wsize=8192     192.168.88.10:/hailsatan/Video
+/olq-nas/Video           -fstype=nfs,credentials=/etc/nas_nfs_credentials.txt    192.168.88.10:/hailsatan/Video
+/olq-nas/home            -fstype=nfs,credentials=/etc/nas_nfs_credentials.txt    192.168.88.10:/home
+
+/olq-nas/olq       -fstype=cifs,credentials=/etc/nas_nfs_credentials.txt   ://192.168.88.10/olq
