@@ -309,8 +309,6 @@ input 1118:2090:Microsoft_Microsoft_Pro_Intellimouse_Mouse {
     pointer_accel -0.7
 }
 
+include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
 
-# input <identifier> xkb_model "pc101"
-# input <identifier> repeat_delay 300
-# input <identifier> repeat_rate 30
-include /etc/sway/config.d/*
+exec --no-startup-id /usr/libexec/lxqt-policykit-agent
